@@ -5,5 +5,11 @@
   "main": "index.js",
   "repository": "git@github.com:Xvezda/gh-emojis.git",
   "author": "Xvezda <xvezda@naver.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.0.0"
+  }
 }
