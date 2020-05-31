@@ -1,0 +1,9 @@
+{
+  "name": "gh-emojis",
+  "version": "1.0.0",
+  "description": "Simple click to copy Github emojis.",
+  "main": "index.js",
+  "repository": "git@github.com:Xvezda/gh-emojis.git",
+  "author": "Xvezda <xvezda@naver.com>",
+  "license": "MIT"
+}
