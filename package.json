@@ -39,5 +39,8 @@
     "react-copy-to-clipboard": "^5.0.2",
     "react-lazyload": "^2.6.7",
     "react-tooltip": "^4.2.6"
+  },
+  "resolutions": {
+    "**/ecstatic": "^4.1.4"
   }
 }
