@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack -c webpack.config.js",
     "serve": "http-server -c-1 dist",
-    "deploy": "gh-pages -d dist"
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "7",
