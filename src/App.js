@@ -66,11 +66,11 @@ class App extends Component {
             </div>
           </div>
         </section>
-        <div className="container">
+        <div className="container is-fluid">
           {
             !this.state.error
               ? (
-                <div className="tile is-ancestor columns is-multiline">
+                <div className="tile is-ancestor columns is-mobile is-centered is-multiline">
                   {
                     this.state.emojis
                       && Object.entries(this.state.emojis)
