@@ -2,18 +2,22 @@
   "name": "gh-emojis",
   "version": "1.0.0",
   "description": "Simple click to copy Github emojis.",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "git@github.com:Xvezda/gh-emojis.git",
   "author": "Xvezda <xvezda@naver.com>",
   "license": "MIT",
   "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "serve": "http-server -c-1 dist",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "7",
-    "gh-pages": "^3.0.0"
+    "@babel/plugin-transform-react-jsx": "^7.10.1",
+    "@babel/preset-env": "^7.10.2"
   },
   "dependencies": {
-    "preact": "^10.4.4"
+    "preact": "^10.4.4",
+    "react-lazyload": "^2.6.7"
   }
 }
