@@ -8,6 +8,7 @@
 import { h, Component, Fragment, createRef } from 'preact'
 /** @jsx h */
 
+import GithubCorner from 'react-github-corner';
 import Emoji from './Emoji.js'
 
 
@@ -87,11 +88,15 @@ class App extends Component {
               : (
                 <div className="notification is-danger">
                   <p>Failed fetching emojis from API. 😥</p>
-                  <p></p>
                 </div>
               )
           }
         </div>
+        <GithubCorner
+          href="https://github.com/Xvezda/gh-emojis"
+          style="position: fixed; top: 0; right: 0"
+          target="_blank"
+        />
       </Fragment>
     )
   }
