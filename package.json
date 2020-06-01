@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "gh-pages": "^3.0.0"
+  },
+  "dependencies": {
+    "preact": "^10.4.4"
   }
 }
