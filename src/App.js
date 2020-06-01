@@ -5,14 +5,20 @@
  * https://opensource.org/licenses/MIT.
  */
 
-import { h, Component, Fragment } from 'preact'
+import { h, Component, Fragment, createRef } from 'preact'
 /** @jsx h */
 
+import Emoji from './Emoji.js'
+
+
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+
     const storedState = localStorage.getItem('state')
     this.state = storedState ? JSON.parse(storedState) : {}
+
+    this.notification = createRef();
   }
 
   componentDidMount() {
@@ -20,7 +26,7 @@ class App extends Component {
       cache: 'default',
     }
 
-    if (this.state.reset && new Date() < this.state.reset) return
+    if (this.state.reset && new Date() < new Date(this.state.reset)) return
 
     fetch('https://api.github.com/emojis', options)
       .then(response => {
@@ -69,14 +75,12 @@ class App extends Component {
                     this.state.emojis
                       && Object.entries(this.state.emojis)
                         .map(([name, imgsrc]) => (
-                          <div className="tile is-parent">
-                            <div className="tile is-child box">
-                              <figure class="image is-16x16">
-                                <img src={imgsrc} />
-                              </figure>
-                            </div>
-                          </div>
-                    ))
+                          <Emoji
+                            name={name}
+                            src={imgsrc}
+                            notification={this.notification}
+                          />
+                        ))
                   }
                 </div>
               )
