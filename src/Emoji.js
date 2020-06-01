@@ -42,7 +42,7 @@ class Emoji extends Component {
               className="tile is-child box"
             >
               <figure class="image is-16x16">
-                <LazyLoad once>
+                <LazyLoad debounce={500} throttle={500} once>
                   <img
                     src={this.props.src}
                     title={format}
