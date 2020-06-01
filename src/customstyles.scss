@@ -1,0 +1,50 @@
+@charset "utf-8";
+@import "~bulma/bulma";
+
+.tile {
+    flex-grow: unset;
+}
+
+.emoji {
+    transition: transform .2s ease-in-out;
+    transform: scale(1);
+}
+
+.emoji img {
+    transition: all .5s linear;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.emoji img.loaded {
+    opacity: 1;
+}
+
+.emoji::after {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+    opacity: 0;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    top: -20px;
+    content: ":" attr(data-name) ":";
+    font-size: $small-font-size;
+    padding: $code-padding;
+    color: $light;
+    background-color: $dark;
+    transition: all .5s linear;
+}
+
+.emoji:hover {
+    transform: scale(1.5);
+}
+
+.emoji:hover::after {
+    opacity: 1;
+}
+
+.is-absolute {
+    position: absolute;
+}
