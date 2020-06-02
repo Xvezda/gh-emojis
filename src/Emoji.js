@@ -44,9 +44,10 @@ class Emoji extends Component {
               <figure class="image is-16x16">
                 <LazyLoad debounce={500} throttle={500} once>
                   <img
+                    width="16"
+                    height="16"
                     src={this.props.src}
                     title={format}
-                    onLoad={e => (e.target.classList.add('loaded'))}
                   />
                 </LazyLoad>
               </figure>
