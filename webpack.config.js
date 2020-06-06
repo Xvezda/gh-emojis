@@ -30,7 +30,10 @@ module.exports = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: 'src/index.html', to: 'index.html' }
+        { from: 'src/index.html', to: 'index.html' },
+        { from: 'src/site.webmanifest', to: 'site.webmanifest' },
+        { from: 'src/*.png', flatten: true },
+        { from: 'src/*.ico', flatten: true }
       ]
     }),
     new ExtractTextPlugin('bundle.css'),
